@@ -191,7 +191,6 @@ export default function ResearcherHomepage() {
       { label: "ORCID", href: "https://orcid.org/0000-0002-6617-6661" },
       { label: "LinkedIn", href: "https://www.linkedin.com/in/shota-kanasugi-4201622a2/" },
       { label: "ResearchGate", href: "https://www.researchgate.net/profile/Shota-Kanasugi-2" },
-      { label: "GitHub", href: "https://github.com/s-kanasugi" },
     ],
   };
 
@@ -538,21 +537,6 @@ export default function ResearcherHomepage() {
   ];
 
   const awards = [
-    /*{
-      year: "2026.04",
-      title: {
-        en: "Corporate Headquarters Award",
-        ja: "本部表彰",
-      },
-      org: {
-        en: "Fujitsu Limited",
-        ja: "富士通株式会社",
-      },
-      description: {
-        en: "Recognized for outstanding research contributions and successful press releases that facilitated market expansion. Managed the integration of technical R&D with strategic marketing initiatives.",
-        ja: "研究成果の創出およびプレスリリースを通じた認知度向上、市場拡大への貢献が評価され受章。技術開発と市場戦略を連携させた取り組みを主導。",
-      },
-    },*/
     {
       year: "2019.09",
       title: {
@@ -1802,7 +1786,6 @@ export default function ResearcherHomepage() {
           </div>
         </div>
       </header>
-      {/* comment */}
 
       <main className="relative z-10 mx-auto max-w-5xl px-6 pt-56 md:pt-40 pb-12">
         {activeSectionTab === "home" && (
@@ -1811,9 +1794,6 @@ export default function ResearcherHomepage() {
               <div className="text-sm font-medium uppercase tracking-[0.2em] text-slate-500">
                 {tt.homeLabel}
               </div>
-              {/*<h1 className="mt-4 text-4xl font-semibold leading-tight tracking-tight">
-                {tt.heroTitle}
-              </h1>*/}
               <div className="mt-4.5 grid items-center gap-6 md:grid-cols-[1fr_180px]">
                 <div>
                   <div className="text-3xl font-semibold tracking-tight">{profile.name[lang]}</div>
@@ -2008,15 +1988,6 @@ export default function ResearcherHomepage() {
                 </div>
               ))}
             </div>
-            {/*<div className="rounded-3xl border border-slate-200 bg-white/85 p-8 shadow-sm backdrop-blur-sm">
-              <div className="text-sm font-medium uppercase tracking-[0.2em] text-slate-500">
-                {tt.highlightsLabel}
-              </div>
-              <div className="mt-4 space-y-4 text-sm leading-6 text-slate-700">
-                <p>{tt.highlightsText1}</p>
-                <p>{tt.highlightsText2}</p>
-              </div>
-            </div>*/}
           </section>
         )}
 
@@ -2089,47 +2060,9 @@ export default function ResearcherHomepage() {
                 })()}
               </div>
             )}
+            
           </section>
         )}
-        {/*{activeSectionTab === "publications" && (
-          <section className="space-y-5">
-            <div>
-              <div className="text-sm font-medium uppercase tracking-[0.2em] text-slate-500">
-                {tt.publicationsLabel}
-              </div>
-              <h2 className="mt-2 text-2xl font-semibold tracking-tight">{tt.OriginalPapers}</h2>
-            </div>
-            <div className="space-y-4">
-              {publications.map((pub, index) =>
-                renderPublicationCard(pub, "selected", publications.length - index))}
-            </div>
-
-            <div className="pt-4">
-              <h3 className="mt-2 text-2xl font-semibold tracking-tight">{tt.OtherPublications}</h3>
-            </div>
-            <div className="space-y-6">
-              {publicationsOthers.map((group, groupIndex) => {
-                const previousCount = publicationsOthers
-                  .slice(0, groupIndex)
-                  .reduce((sum, g) => sum + g.papers.length, 0);
-
-                return (
-                  <div key={group.year} className="space-y-3">
-                    <div className="space-y-3">
-                      {group.papers.map((pub, index) =>
-                        renderOtherPublicationCard(
-                          pub,
-                          group.year,
-                          totalOtherPublications - previousCount - index
-                        )
-                      )}
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </section>
-        )}*/}
 
         {activeSectionTab === "experience" && (
           <section className="space-y-5">
@@ -2435,211 +2368,7 @@ export default function ResearcherHomepage() {
 
           </section>
         )}
-        {/*{activeSectionTab === "talks" && (
-          <section className="space-y-6">
-            <div>
-              <div className="text-sm font-medium uppercase tracking-[0.2em] text-slate-500">
-                {tt.talksLabel}
-              </div>
-            </div>
-
-            <div className="space-y-4">
-              <h3 className="mt-2 text-2xl font-semibold tracking-tight">{tt.oralPresentations}</h3>
-              <div className="grid gap-5 pr-2 md:grid-cols-2">
-                {oralTalks.map((talk, index) => (
-                  <div key={`${talk.title.en}-${index}`} className="relative rounded-3xl border border-slate-200 bg-white/85 p-6 shadow-sm backdrop-blur-sm">
-                    {talk.invited && (
-                      <div className="absolute right-4 top-4 rounded-full bg-red-50 px-3 py-1 text-xs font-medium text-red-700 ring-1 ring-red-200">
-                        {tt.invitedBadge}
-                      </div>
-                    )}
-
-                    <div className="pr-24">
-                      <div className="text-xs font-medium text-slate-400">
-                        [{oralTalks.length - index}]
-                      </div>
-                      <div className="mt-1 text-lg font-semibold leading-7">
-                        {talk.title[lang]}
-                      </div>
-                    </div>
-                    
-                    <div className="mt-2 text-sm text-slate-700">
-                      {talk.eventUrl ? (
-                        <a
-                          href={talk.eventUrl}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="underline underline-offset-2 hover:text-slate-900"
-                        >
-                          {talk.event[lang]}
-                        </a>
-                      ) : (
-                        talk.event[lang]
-                      )}
-                    </div>
-
-                    <div className="mt-1 text-sm text-slate-500">
-                      {talk.venue[lang]}
-                    </div>
-                    <div className="mt-1 text-sm text-slate-500">
-                      {talk.date[lang]}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="space-y-4 pt-2">
-              <h3 className="mt-2 text-2xl font-semibold tracking-tight">{tt.posterPresentations}</h3>
-              <div className="grid gap-5 pr-2 md:grid-cols-2">
-                {posterTalks.map((talk, index) => (
-                  <div
-                    key={`${talk.title.en}-${index}`}
-                    className="rounded-3xl border border-slate-200 bg-white/85 p-6 shadow-sm backdrop-blur-sm"
-                  >
-                    <div>
-                      <div className="text-xs font-medium text-slate-400">
-                        [{posterTalks.length - index}]
-                      </div>
-                      <div className="mt-1 text-lg font-semibold leading-7">
-                        {talk.title[lang]}
-                      </div>
-                    </div>
-
-                    <div className="mt-2 text-sm text-slate-700">
-                      {talk.eventUrl ? (
-                        <a
-                          href={talk.eventUrl}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="underline underline-offset-2 hover:text-slate-900"
-                        >
-                          {talk.event[lang]}
-                        </a>
-                      ) : (
-                        talk.event[lang]
-                      )}
-                    </div>
-
-                    <div className="mt-1 text-sm text-slate-500">
-                      {talk.venue[lang]}
-                    </div>
-                    <div className="mt-1 text-sm text-slate-500">
-                      {talk.date[lang]}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
-        )}*/}
-
-        {/*{activeSectionTab === "media" && (
-          <section className="space-y-8">
-            <div>
-              <div className="text-sm font-medium uppercase tracking-[0.2em] text-slate-500">
-                {tt.mediaLabel}
-              </div>
-            </div>
-
-            <div className="space-y-4">
-              <h3 className="mt-2 text-2xl font-semibold tracking-tight">
-                {tt.pressReleases}
-              </h3>
-              {mediaItems
-                .filter((item) => item.category === "press")
-                .map((item, index) => (
-                  <div
-                    key={`${item.title.en}-${item.date}-${index}`}
-                    className="rounded-3xl border border-slate-200 bg-white/85 p-6 shadow-sm backdrop-blur-sm"
-                  >
-                    <div className="text-lg font-semibold leading-7">
-                      <a
-                        href={item.url[lang]}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="underline underline-offset-2 hover:text-slate-900"
-                      >
-                        {item.title[lang]}
-                      </a>
-                    </div>
-                    <div className="mt-2 text-sm text-slate-500">{item.source[lang]}</div>
-                    <div className="mt-1 text-sm text-slate-500">{item.date}</div>
-                    {item.description?.[lang] && (
-                      <p className="mt-3 text-sm leading-6 text-slate-700">
-                        {item.description[lang]}
-                      </p>
-                    )}
-                  </div>
-                ))}
-            </div>
-
-            <div className="space-y-4">
-              <h3 className="mt-2 text-2xl font-semibold tracking-tight">
-                {tt.articles}
-              </h3>
-              {mediaItems
-                .filter((item) => item.category === "article")
-                .map((item, index) => (
-                  <div
-                    key={`${item.title.en}-${item.date}-${index}`}
-                    className="rounded-3xl border border-slate-200 bg-white/85 p-6 shadow-sm backdrop-blur-sm"
-                  >
-                    <div className="text-lg font-semibold leading-7">
-                      <a
-                        href={item.url[lang]}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="underline underline-offset-2 hover:text-slate-900"
-                      >
-                        {item.title[lang]}
-                      </a>
-                    </div>
-                    <div className="mt-2 text-sm text-slate-500">{item.source[lang]}</div>
-                    <div className="mt-1 text-sm text-slate-500">{item.date}</div>
-                    {item.description?.[lang] && (
-                      <p className="mt-3 text-sm leading-6 text-slate-700">
-                        {item.description[lang]}
-                      </p>
-                    )}
-                  </div>
-                ))}
-            </div>
-
-            <div className="space-y-4">
-              <h3 className="mt-2 text-2xl font-semibold tracking-tight">
-                {tt.mediaCoverage}
-              </h3>
-              {mediaItems
-                .filter((item) => item.category === "mediaCoverage")
-                .map((item, index) => (
-                  <div
-                    key={`${item.title.en}-${item.date}-${index}`}
-                    className="rounded-3xl border border-slate-200 bg-white/85 p-6 shadow-sm backdrop-blur-sm"
-                  >
-                    <div className="text-lg font-semibold leading-7">
-                      <a
-                        href={item.url[lang]}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="underline underline-offset-2 hover:text-slate-900"
-                      >
-                        {item.title[lang]}
-                      </a>
-                    </div>
-                    <div className="mt-2 text-sm text-slate-500">{item.source[lang]}</div>
-                    <div className="mt-1 text-sm text-slate-500">{item.date}</div>
-                    {item.description?.[lang] && (
-                      <p className="mt-3 text-sm leading-6 text-slate-700">
-                        {item.description[lang]}
-                      </p>
-                    )}
-                  </div>
-                ))}
-            </div>
-          </section>
-        )}*/}
-
+       
         {activeSectionTab === "media" && (
           <section className="space-y-6">
             <div>
