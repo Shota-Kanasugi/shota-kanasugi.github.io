@@ -66,13 +66,13 @@ export default function ResearcherHomepage() {
       newsMediaBadge: "Media",
       newsOthersBadge: "Others",
       getInTouch: "Get in touch",
+      contactForm: "Contact Form",
       contactText:
-        "For research collaborations, invited talks, or related inquiries, please contact me by email.",
+        "For research collaborations, invited talks, or related inquiries, please use the contact form below. LinkedIn and GitHub are also available for follow-up communication.",
       disclaimer:
         "The views and opinions expressed on this website are my own and do not necessarily reflect those of my affiliated organization.",
       affiliation: "Affiliation",
       location: "Location",
-      email: "Email",
       researchInterests: "Research Interests",
       highlightsText1:
         "Use this space for awards, funded projects, invited talks, media coverage, or selected achievements.",
@@ -86,7 +86,7 @@ export default function ResearcherHomepage() {
       navHome: "ホーム",
       navResearch: "研究",
       navPublications: "出版物",
-      navCv: "略歴・受賞",
+      navCv: "略歴",
       navTalks: "発表・講演",
       navMedia: "メディア",
       navLinks: "関連リンク",
@@ -124,13 +124,13 @@ export default function ResearcherHomepage() {
       newsMediaBadge: "メディア",
       newsOthersBadge: "その他",
       getInTouch: "お問い合わせ",
+      contactForm: "問い合わせフォーム",
       contactText:
-        "共同研究、講演依頼、その他のお問い合わせはメールでご連絡ください。",
+        "共同研究、講演依頼、その他のお問い合わせは、下記の問い合わせフォームをご利用ください。必要に応じて、LinkedIn や GitHub 経由でのご連絡も可能です。",
       disclaimer:
         "本ウェブサイトに掲載している内容は個人の見解であり、所属組織の公式見解を示すものではありません。",
       affiliation: "所属",
       location: "所在地",
-      email: "メール",
       researchInterests: "研究分野",
       highlightsText1:
         "受賞歴、研究費、招待講演、メディア掲載、主な成果などをここに記載できます。",
@@ -147,7 +147,7 @@ export default function ResearcherHomepage() {
   const profile = {
     photo: "/profile.jpg",
     name: {
-      en: "Shota Kanasugi",
+      en: "Shota Kanasugi (金杉 翔太)",
       ja: "金杉 翔太 (Shota Kanasugi)",
     },
     title: {
@@ -155,17 +155,16 @@ export default function ResearcherHomepage() {
       ja: "博士(理学)・研究員",
     },
     affiliation: {
-      en: "Fujitsu Limited (Quantum Laboratory)",
+      en: "Fujitsu Ltd. (Quantum Laboratory)",
       ja: "富士通株式会社 (量子研究所)",
     },
     affiliationUrl: {
       en: "https://global.fujitsu/en-global/technology/research/quantum",
       ja: "https://global.fujitsu/ja-jp/technology/research/quantum",
     },
-    email: "kanasugi.shota@fujitsu.com",
     location: {
-      en: "4-1-1 Kamikodanaka, Nakahara-ku, Kawasaki-shi, Kanagawa, Japan",
-      ja: "〒211-8588 神奈川県川崎市中原区上小田中4-1-1",
+      en: "Kawasaki, Japan",
+      ja: "神奈川県川崎市",
     },
     intro: {
       en: "I am a researcher working on quantum algorithms for computational chemistry and materials physics. My research focuses on developing practical quantum computational methods for scientifically and industrially important problems.",
@@ -197,18 +196,6 @@ export default function ResearcherHomepage() {
   };
 
   const news = [
-    {
-      date: "2026.04.21",
-      type: "talk",
-      text: {
-        en: "Presented a poster at Fujitsu Quantum Day 2026, Fujitsu’s global quantum event.",
-        ja: "富士通のグローバル量子イベント「Fujitsu Quantum Day 2026」でポスター発表を行いました。",
-      },
-      url: {
-        en: "https://global.fujitsu/en-global/technology/research/quantum/event-202604",
-        ja: "https://global.fujitsu/ja-jp/technology/research/quantum/event-202604",
-      },
-    },
     {
       date: "2026.04.09",
       type: "media",
@@ -270,7 +257,7 @@ export default function ResearcherHomepage() {
       }
     },
     {
-      date: "2026.03.25",
+      date: "2026.03.17",
       type: "talk",
       text: {
         en: "Gave an oral presentation at the APS Global Physics Summit 2026.",
@@ -953,26 +940,6 @@ export default function ResearcherHomepage() {
     {
       international: true,
       title: {
-        en: "Enabling Practical Quantum Chemistry Computation in the Early-FTQC era",
-        ja: "Enabling Practical Quantum Chemistry Computation in the Early-FTQC era",
-      },
-      event: {
-        en: "Fujitsu Quantum Day 2026",
-        ja: "Fujitsu Quantum Day 2026",
-      },
-      venue: {
-        en: "Kawasaki, Japan",
-        ja: "日本 川崎 (Fujitsu Uvance Kawasaki Tower)",
-      },
-      eventUrl: "https://global.fujitsu/ja-jp/technology/research/quantum/event-202604",
-      date: {
-        en: "April 21, 2026",
-        ja: "2026年4月21日",
-      },
-    },
-    {
-      international: true,
-      title: {
         en: "Subspace-based local compilation of variational quantum circuits for large-scale quantum many-body simulation",
         ja: "Subspace-based local compilation of variational quantum circuits for large-scale quantum many-body simulation",
       },
@@ -997,32 +964,12 @@ export default function ResearcherHomepage() {
         ja: "Computation of Green's function by local variational quantum compilation",
       },
       event: {
-        en: "Fujitsu Quantum Day 2024",
-        ja: "Fujitsu Quantum Day 2024",
-      },
-      venue: {
-        en: "Delft, Netherlands",
-        ja: "オランダ デルフト",
-      },
-      eventUrl: "https://mkt-europe.global.fujitsu.com/fujitsu-quantum-symposium",
-      date: {
-        en: "January 25, 2024",
-        ja: "2024年1月25日",
-      },
-    },
-    {
-      international: true,
-      title: {
-        en: "Computation of Green's function by local variational quantum compilation",
-        ja: "Computation of Green's function by local variational quantum compilation",
-      },
-      event: {
         en: "NWO physics 2024",
         ja: "NWO physics 2024",
       },
       venue: {
         en: "Veldhoven, Netherlands",
-        ja: "オランダ ヴェルドホーフェン",
+        ja: "オランダ　ヴェルドホーフェン",
       },
       eventUrl: "https://nwophysics.nl/flashback-nwo-physics-2024",
       date: {
@@ -1365,7 +1312,7 @@ export default function ResearcherHomepage() {
       },
       venue: {
         en: "Uppsala, Sweden",
-        ja: "ウプサラ、スウェーデン",
+        ja: "スウェーデン　ウプサラ",
       },
       eventUrl: "https://materials-theory.physics.uu.se/black-schaffer/",
       date: {
@@ -1385,7 +1332,7 @@ export default function ResearcherHomepage() {
       },
       venue: {
         en: "Stockholm, Sweden",
-        ja: "ストックホルム、スウェーデン",
+        ja: "スウェーデン　ストックホルム",
       },
       eventUrl: "https://nordita.org/",
       date: {
@@ -1498,7 +1445,7 @@ export default function ResearcherHomepage() {
       },
     },
 
-    {
+    /*{
       category: "mediaCoverage",
       title: {
         en: "New technology to accelerate the practical application of 'quantum computers': Fujitsu and Osaka University (in Japanese)",
@@ -1637,7 +1584,7 @@ export default function ResearcherHomepage() {
   　　　　en: "A news article published in the BioSpace on the STAR architecture (Paper [14]) and molecular Hamiltonian optimization and resource estimation (Paper [13]).",
         ja: "BioSpaceに掲載された、STARアーキテクチャ（論文 [14]）および分子ハミルトニアン最適化・リソース推定（論文 [13]）に関する海外記事です。",
       },
-    },
+    },*/
 
   ];
 
@@ -1784,7 +1731,7 @@ export default function ResearcherHomepage() {
   );
 
   return (
-    <div className="relative min-h-screen overflow-hidden bg-slate-50 text-slate-900">
+    <div className="relative min-h-screen overflow-hidden bg-white text-slate-900">
       <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
         <div className="absolute -left-20 top-20 h-56 w-56 rounded-full bg-blue-300/45 blur-2xl" />
         <div className="absolute right-[-60px] top-1/4 h-64 w-64 rounded-full bg-sky-300/40 blur-2xl" />
@@ -1940,10 +1887,6 @@ export default function ResearcherHomepage() {
                     <div>
                       <span className="font-medium text-slate-900">{tt.location}:</span>{" "}
                       {profile.location[lang]}
-                    </div>
-                    <div>
-                      <span className="font-medium text-slate-900">{tt.email}:</span>{" "}
-                      {profile.email}
                     </div>
                   </div>
                 </div>
@@ -2726,7 +2669,7 @@ export default function ResearcherHomepage() {
               >
                 {tt.articles}
               </button>
-              <button
+              {/*<button
                 onClick={() => setActiveMediaTab("coverage")}
                 className={`rounded-2xl px-4 py-2 text-sm transition ${
                   activeMediaTab === "coverage"
@@ -2735,7 +2678,7 @@ export default function ResearcherHomepage() {
                 }`}
               >
                 {tt.mediaCoverage}
-              </button>
+              </button>*/}
             </div>
 
             {activeMediaTab === "press" && (
@@ -2871,7 +2814,17 @@ export default function ResearcherHomepage() {
           </div>
           <h2 className="mt-2 text-2xl font-semibold tracking-tight">{tt.getInTouch}</h2>
           <p className="mt-4 max-w-2xl leading-7 text-slate-200">{tt.contactText}</p>
-          <div className="mt-6 text-lg font-medium">{profile.email}</div>
+          <div className="mt-6">
+            <a
+              href="https://forms.gle/EZac8e5KquwPqsNcA"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-1.5 rounded-2xl bg-white px-4 py-2 text-sm text-slate-700 ring-1 ring-slate-200 transition hover:bg-slate-200 hover:text-slate-900 hover:ring-slate-300"
+            >
+              <span>{tt.contactForm}</span>
+              <i className="fas fa-external-link-alt text-[11px]" aria-hidden="true"></i>
+            </a>
+          </div>
           <p className="mt-6 text-xs leading-5 text-slate-400">
             {tt.disclaimer}
           </p>
